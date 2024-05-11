@@ -1,8 +1,12 @@
-#include "ArrayBag.hpp"
+#include "ArrayBag.hpp" 
 
+// Implementations of the ArrayBag member functions
+
+// Constructor
 template <typename T, std::size_t MAX_CAPACITY>
-ArrayBag<T, MAX_CAPACITY>::ArrayBag() : itemCount(0) {}
+ArrayBag<T, MAX_CAPACITY>::ArrayBag() : itemCount(0) {} 
 
+// Destructor
 template <typename T, std::size_t MAX_CAPACITY>
 ArrayBag<T, MAX_CAPACITY>::~ArrayBag() {}
 
@@ -13,7 +17,7 @@ std::size_t ArrayBag<T, MAX_CAPACITY>::getCurrentSize() const
 }
 
 template <typename T, std::size_t MAX_CAPACITY>
-bool ArrayBag<T, MAX_CAPACITY>::isEmpty() const override { return itemCount == 0; }
+bool ArrayBag<T, MAX_CAPACITY>::isEmpty() const { return itemCount == 0; }
 
 template <typename T, std::size_t MAX_CAPACITY>
 bool ArrayBag<T, MAX_CAPACITY>::add(const T &entry)
@@ -27,7 +31,7 @@ bool ArrayBag<T, MAX_CAPACITY>::add(const T &entry)
 }
 
 template <typename T, std::size_t MAX_CAPACITY>
-bool ArrayBag<T, MAX_CAPACITY>::remove(const T &entry) override
+bool ArrayBag<T, MAX_CAPACITY>::remove(const T &entry)
 {
     for (std::size_t i = 0; i < itemCount; ++i)
     {
@@ -41,10 +45,10 @@ bool ArrayBag<T, MAX_CAPACITY>::remove(const T &entry) override
 }
 
 template <typename T, std::size_t MAX_CAPACITY>
-void ArrayBag<T, MAX_CAPACITY>::clear() override { itemCount = 0; } // Simply reset the item count
+void ArrayBag<T, MAX_CAPACITY>::clear() { itemCount = 0; } // Simply reset the item count
 
 template <typename T, std::size_t MAX_CAPACITY>
-std::size_t ArrayBag<T, MAX_CAPACITY>::getFrequencyOf(const T &entry) const override
+std::size_t ArrayBag<T, MAX_CAPACITY>::getFrequencyOf(const T &entry) const
 {
     std::size_t frequency = 0;
     for (std::size_t i = 0; i < itemCount; ++i)
@@ -58,7 +62,7 @@ std::size_t ArrayBag<T, MAX_CAPACITY>::getFrequencyOf(const T &entry) const over
 }
 
 template <typename T, std::size_t MAX_CAPACITY>
-bool ArrayBag<T, MAX_CAPACITY>::contains(const T &entry) const override
+bool ArrayBag<T, MAX_CAPACITY>::contains(const T &entry) const
 {
     return getFrequencyOf(entry) > 0;
 }
