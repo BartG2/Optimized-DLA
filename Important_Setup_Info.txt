@@ -1,0 +1,33 @@
+I apologize for the confusion. Let's try a different approach to install raylib on your Ubuntu 22.04.4 system.
+
+First, ensure you're in your home directory:
+cd ~
+Install the required dependencies:
+sudo apt-get update
+sudo apt-get install build-essential git cmake xorg-dev libgl1-mesa-dev libasound2-dev libxi-dev libxrandr-dev libxcursor-dev libxinerama-dev libx11-dev lib32z1-dev libglfw3-dev libegl1-mesa-dev libgles2-mesa-dev libwayland-dev libxkbcommon-dev
+Clone the raylib repository:
+git clone https://github.com/raysan5/raylib.git raylib
+Navigate to the cloned directory:
+cd raylib/src
+Build and install raylib:
+make PLATFORM=PLATFORM_DESKTOP
+sudo make install RAYLIB_LIBTYPE=SHARED
+Navigate back to your project directory (replace path_to_your_project with the actual path):
+cd path_to_your_project
+Now, you can include raylib in your C++ files:
+#include "raylib.h"
+When compiling your project, link against raylib:
+g++ your_file.cpp -o your_program -lraylib
+Replace your_file.cpp with the name of your C++ file and your_program with the name you want for your compiled program.
+
+
+
+Ensure you're in the raylib/src directory:
+cd ~/raylib/src
+Clean any previous build artifacts:
+make clean
+Build the shared library:
+make PLATFORM=PLATFORM_DESKTOP RAYLIB_LIBTYPE=SHARED
+Install the shared library:
+sudo make install RAYLIB_LIBTYPE=SHARED
+This should create the shared library libraylib.so.5.0.0 and install it to /usr/local/lib.
