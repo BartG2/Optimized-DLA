@@ -5,7 +5,7 @@
 #include <functional>
 
 #include "Particle.h"
-#include "Quadtree.hpp"
+#include "Quadtree.h"
 
 using namespace std;
 
