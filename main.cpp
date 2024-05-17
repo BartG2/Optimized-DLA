@@ -14,8 +14,8 @@ bool particleCollision(const Particle& particle, const Rectangle& range) {
 }
 
 int main() {
-    unsigned int screenWidth = 1920; 
-    unsigned int screenHeight = 1080; 
+    float screenWidth = 1920; 
+    float screenHeight = 1080; 
 
     InitWindow(screenWidth, screenHeight, "DLA");
     //SetTargetFPS(100);
